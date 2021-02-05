@@ -1,0 +1,37 @@
+<div class="text-center">
+    <button type="button" class="btn btn-primary ml-5" (click)="goHome()"> Home</button>
+</div>
+<div class="mt-20">
+    <h4>Task list</h4>
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col" class="text-center">Title</th>
+            <th scope="col" class="text-center">Days</th>
+            <th scope="col" class="text-center">Repeat</th>
+            <th scope="col" class="text-center">Edit</th>
+            <th scope="col" class="text-center">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let task of tasks" class="cur-pointer">
+            <td class="text-center">{{task.value.title}}</td>
+            <td class="text-center">
+                <span *ngFor="let day of task.value.daysOfWeek;let i = index">
+                    <br *ngIf="i % 2 === 0 && i !== 0">
+                    {{day.checked ? day.title : ""}}
+                </span>
+            </td>
+            <td class="text-center">
+                {{task.value.repeat ? "repeat" : "No repeat" }}
+            </td>
+            <td class="text-center">
+                <button type="button" class="btn btn-primary" (click)="select(task)"> Edit</button>
+            </td>
+            <td class="text-center">
+                <button type="button" class="btn btn-success" (click)="finish(task)"> Mark as finished</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,14 @@
+<div class="text-center">
+    <button type="button" class="btn btn-primary" (click)="goHome()"> Home</button>
+    <button type="button" class="btn btn-success ml-5" (click)="save()"> Save</button>
+</div>
+<section id="section-form">
+    <div class="form-group">
+        <label for="title" class="font-weight-bold">Title</label>
+        <input type="text" class="form-control" id="title" placeholder="Enter title" [(ngModel)]="salary.title">
+    </div>
+    <div class="form-group">
+        <label for="title" class="font-weight-bold">Value (R$)</label>
+        <input type="text" class="form-control" id="value" placeholder="Enter value" [(ngModel)]="salary.value">
+    </div>
+</section>

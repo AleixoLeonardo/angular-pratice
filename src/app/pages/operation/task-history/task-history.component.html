@@ -1,0 +1,23 @@
+<div class="text-center">
+    <button type="button" class="btn btn-primary" (click)="goHome()"> Home</button>
+</div>
+<table class="table table-striped mt-5">
+    <thead>
+        <tr>
+            <th scope="col" class="text-center">Title</th>
+            <th scope="col" class="text-center">Date</th>
+            <th scope="col" class="text-center">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let history of taskHistory" class="cur-pointer">
+            <td class="text-center">{{history.value.task.title}}</td>
+            <td class="text-center">
+                {{history.value.date | date: "dd-MM-yyyy HH:mm:ss" }}
+            </td>
+            <td class="text-center">
+                <button type="button" class="btn btn-danger" (click)="delete(history)"> Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,20 @@
+<div class="text-center">
+    <button type="button" class="btn btn-primary" (click)="goHome()"> Home</button>
+</div>
+
+<div class="mt-5 container">
+
+
+    <div class=" text-center card card-salary">
+        <span class="d-block">Salary</span>
+        <span class="info salary-info">{{getMoneyValue(salary)}}</span>
+    </div>
+
+    <div class="text-center card">
+        <span class="d-block">Expense</span>
+        <span class="info expense-info">{{getMoneyValue(expenses)}}</span>
+        <span class="d-block">Predicted: {{getMoneyValue(totalPredicted)}}</span>
+    </div>
+
+
+</div>

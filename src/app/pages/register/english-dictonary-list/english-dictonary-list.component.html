@@ -1,0 +1,57 @@
+<section *ngIf="!phrases">
+    <div class="text-center">
+        <button type="button" class="btn btn-primary ml-5" (click)="goHome()"> Home</button>
+    </div>
+    <div class="mt-20">
+        <h4>Bill list</h4>
+    </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col" class="text-center">Title</th>
+                <th scope="col" class="text-center">Translation</th>
+                <th scope="col" class="text-center">Qtd Phrases</th>
+                <th scope="col" class="text-center">Edit</th>
+                <th scope="col" class="text-center">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let englishDictionary of englishDictionarys" class="cur-pointer">
+                <td class="text-center">{{englishDictionary.value.title}}</td>
+                <td class="text-center">
+                    {{englishDictionary.value.translation}}
+                </td>
+                <td class="text-center">
+                    {{englishDictionary.value.phrases ? englishDictionary.value.phrases.length : 0}}
+                </td>
+                <td class="text-center">
+                    <button type="button" class="btn btn-primary" (click)="select(englishDictionary)"> Edit</button>
+                </td>
+                <td class="text-center">
+                    <button type="button" class="btn btn-success" (click)="openModal(template, englishDictionary)"> Add
+                        phrase</button>
+                    <button type="button" class="btn btn-success ml-1" (click)="showPhrases(englishDictionary)"> Show
+                        phrases
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+<ng-template #template>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Phrases</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <label for="title" class="font-weight-bold">Phrase</label>
+            <input type="text" class="form-control" id="value-paid" placeholder="Enter phrase" [(ngModel)]="phrase">
+        </div>
+        <button type="button" class="btn btn-success" (click)="finish();">Save</button>
+    </div>
+</ng-template>
+
+<app-phrases *ngIf="phrases" [phrases]="phrases" (phrasesEmitter)="onBack($event)"></app-phrases>

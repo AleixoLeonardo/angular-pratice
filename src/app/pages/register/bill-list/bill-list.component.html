@@ -1,0 +1,47 @@
+<div class="text-center">
+    <button type="button" class="btn btn-primary ml-5" (click)="goHome()"> Home</button>
+</div>
+<div class="mt-20">
+    <h4>Bill list</h4>
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col" class="text-center">Title</th>
+            <th scope="col" class="text-center">Predicted</th>
+            <th scope="col" class="text-center">Edit</th>
+            <th scope="col" class="text-center">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let bill of bills" class="cur-pointer">
+            <td class="text-center">{{bill.value.title}}</td>
+            <td class="text-center">
+                R$ {{bill.value.predicted}}
+            </td>
+            <td class="text-center">
+                <button type="button" class="btn btn-primary" (click)="select(bill)"> Edit</button>
+            </td>
+            <td class="text-center">
+                <button type="button" class="btn btn-success" (click)="openModal(template, bill)"> Mark as paid</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<ng-template #template>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Payment</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <label for="title" class="font-weight-bold">Value (R$)</label>
+            <input type="number" class="form-control" id="value-paid" placeholder="Enter value paid"
+                [(ngModel)]="valuePaid">
+        </div>
+        <button type="button" class="btn btn-success" (click)="finish();">Save</button>
+    </div>
+</ng-template>
