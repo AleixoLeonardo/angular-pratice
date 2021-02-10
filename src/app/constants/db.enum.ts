@@ -4,5 +4,6 @@ export enum DB {
     BILL = "bill",
     BILL_HISTORY = "bill_history",
     SALARY = "salary",
-    ENGLISH_DICT = "english_dictionary"
+    ENGLISH_DICT = "english_dictionary",
+    TIME_CLOCK = "time_clock",
 }

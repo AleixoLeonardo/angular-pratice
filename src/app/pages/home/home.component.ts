@@ -62,6 +62,10 @@ export class HomeComponent implements OnInit {
     this.router.navigate(["english-dictionary-history"]);
   }
 
+  goToTimeClock() {
+    this.router.navigate(["time-clock"]);
+  }
+
   goToDashboard() {
     this.router.navigate(["dashboard"]);
   }

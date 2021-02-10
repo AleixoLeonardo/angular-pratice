@@ -7,6 +7,20 @@ export class DateUtilService {
 
   constructor() { }
 
+  diffMinutes(dtIn, DtOut) {
+    let diffInMilliSeconds = Math.abs(DtOut - dtIn) / 1000;
+    const minutes = Math.floor(diffInMilliSeconds / 60) % 60;
+    diffInMilliSeconds -= minutes * 60;
+    return minutes;
+  }
+
+  diffHour(dtIn, DtOut) {
+    let diffInMilliSeconds = Math.abs(DtOut - dtIn) / 1000;
+    const hours = Math.floor(diffInMilliSeconds / 3600) % 24;
+    diffInMilliSeconds -= hours * 3600;
+    return hours;
+  }
+
   daysOfTheWeek() {
     return [
       {

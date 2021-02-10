@@ -13,6 +13,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { EnglishDictonaryComponent } from './pages/register/english-dictonary/english-dictonary.component';
 import { EnglishDictonaryListComponent } from './pages/register/english-dictonary-list/english-dictonary-list.component';
 import { PhrasesComponent } from './pages/operation/phrases/phrases.component';
+import { TimeClockComponent } from './pages/operation/time-clock/time-clock.component';
 
 
 const routes: Routes = [
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'salary-list', component: SalaryListComponent },
   { path: 'english-dictionary/:id', component: EnglishDictonaryComponent },
   { path: 'english-dictionary-list', component: EnglishDictonaryListComponent },
+  { path: 'time-clock', component: TimeClockComponent },
 
 
   { path: 'home', component: HomeComponent },

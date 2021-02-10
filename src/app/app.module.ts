@@ -30,6 +30,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { EnglishDictonaryComponent } from './pages/register/english-dictonary/english-dictonary.component';
 import { EnglishDictonaryListComponent } from './pages/register/english-dictonary-list/english-dictonary-list.component';
 import { PhrasesComponent } from './pages/operation/phrases/phrases.component';
+import { TimeClockComponent } from './pages/operation/time-clock/time-clock.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { PhrasesComponent } from './pages/operation/phrases/phrases.component';
     DashboardComponent,
     EnglishDictonaryComponent,
     EnglishDictonaryListComponent,
-    PhrasesComponent
+    PhrasesComponent,
+    TimeClockComponent
   ],
   imports: [
     BrowserModule,
