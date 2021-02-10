@@ -12,12 +12,14 @@ import { ToastMessage } from 'src/app/constants/toast-message.enum';
 })
 export class EnglishDictonaryListComponent implements OnInit {
   englishDictionarys: any = [];
+  englishDictionaryFiltered: any = [];
   englishDictionary: any;
   loading: boolean = false;
   modalRef: BsModalRef;
   valuePaid: number = 0;
   phrase: string = "";
   phrases: any;
+  filter: string = "";
 
   constructor(private englishDictionarydbService: EnglishDictionaryDbService,
     private router: Router,
@@ -31,8 +33,15 @@ export class EnglishDictonaryListComponent implements OnInit {
   getEnglishDictionarys() {
     this.englishDictionarydbService.getAll().subscribe((res: any) => {
       this.englishDictionarys = res;
+      this.englishDictionaryFiltered = this.englishDictionarys;
     }, error => {
     })
+  }
+
+  search() {
+    this.englishDictionaryFiltered = this.englishDictionarys.filter((v => {
+      return v.value.title.toLowerCase().indexOf(this.filter.toLowerCase()) > -1;
+    }))
   }
 
 

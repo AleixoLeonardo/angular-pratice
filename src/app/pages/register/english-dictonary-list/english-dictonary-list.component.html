@@ -5,6 +5,12 @@
     <div class="mt-20">
         <h4>English words list</h4>
     </div>
+    <hr>
+    <div class="form-group">
+        <label for="title" class="font-weight-bold">Filter</label>
+        <input type="text" class="form-control" id="filter" placeholder="Enter word" [(ngModel)]="filter"
+            (keyup)="search()">
+    </div>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -16,18 +22,18 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let englishDictionary of englishDictionarys" class="cur-pointer">
-                <td class="text-center">{{englishDictionary.value.title}}</td>
-                <td class="text-center">
+            <tr *ngFor="let englishDictionary of englishDictionaryFiltered;let i = index;" class="cur-pointer">
+                <td class="text-center" *ngIf="i<10">{{englishDictionary.value.title}}</td>
+                <td class="text-center" *ngIf="i<10">
                     {{englishDictionary.value.translation}}
                 </td>
-                <td class="text-center">
+                <td class="text-center" *ngIf="i<10">
                     {{englishDictionary.value.phrases ? englishDictionary.value.phrases.length : 0}}
                 </td>
-                <td class="text-center">
+                <td class="text-center" *ngIf="i<10">
                     <button type="button" class="btn btn-primary" (click)="select(englishDictionary)"> Edit</button>
                 </td>
-                <td class="text-center">
+                <td class="text-center" *ngIf="i<10">
                     <button type="button" class="btn btn-success" (click)="openModal(template, englishDictionary)"> Add
                         phrase</button>
                     <button type="button" class="btn btn-success ml-1" (click)="showPhrases(englishDictionary)"> Show
