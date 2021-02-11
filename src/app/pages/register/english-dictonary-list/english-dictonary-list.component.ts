@@ -80,8 +80,6 @@ export class EnglishDictonaryListComponent implements OnInit {
     this.englishDictionary = englishDictionary;
   }
 
-
-
   goHome() {
     this.router.navigate(["home"]);
   }
