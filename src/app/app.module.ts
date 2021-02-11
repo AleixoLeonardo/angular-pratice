@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,9 +31,13 @@ import { EnglishDictonaryComponent } from './pages/register/english-dictonary/en
 import { EnglishDictonaryListComponent } from './pages/register/english-dictonary-list/english-dictonary-list.component';
 import { PhrasesComponent } from './pages/operation/phrases/phrases.component';
 import { TimeClockComponent } from './pages/operation/time-clock/time-clock.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ],
   declarations: [
     AppComponent,
     HomeComponent,
@@ -60,7 +64,8 @@ import { TimeClockComponent } from './pages/operation/time-clock/time-clock.comp
     ToastrModule.forRoot(),
     NgxLoadingModule.forRoot({}),
     BrowserAnimationsModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

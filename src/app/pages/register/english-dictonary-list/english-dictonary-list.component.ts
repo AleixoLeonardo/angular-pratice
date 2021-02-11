@@ -20,6 +20,7 @@ export class EnglishDictonaryListComponent implements OnInit {
   phrase: string = "";
   phrases: any;
   filter: string = "";
+  paginaAtual = 1;
 
   constructor(private englishDictionarydbService: EnglishDictionaryDbService,
     private router: Router,
@@ -41,7 +42,7 @@ export class EnglishDictonaryListComponent implements OnInit {
   search() {
     this.englishDictionaryFiltered = this.englishDictionarys.filter((v => {
       return v.value.title.toLowerCase().indexOf(this.filter.toLowerCase()) > -1 ||
-        v.value.translate.toLowerCase().indexOf(this.filter.toLocaleLowerCase()) > -1;
+        v.value.translation.toLowerCase().indexOf(this.filter.toLocaleLowerCase()) > -1;
     }))
   }
 

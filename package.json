@@ -25,6 +25,7 @@
     "install": "^0.13.0",
     "ngx-bootstrap": "^6.2.0",
     "ngx-loading": "^2.0.1",
+    "ngx-pagination": "^5.0.0",
     "ngx-toastr": "^13.2.0",
     "node-pre-gyp": "^0.17.0",
     "rxjs": "~6.5.4",

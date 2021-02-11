@@ -22,18 +22,19 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let englishDictionary of englishDictionaryFiltered;let i = index;" class="cur-pointer">
-                <td class="text-center" *ngIf="i<10">{{englishDictionary.value.title}}</td>
-                <td class="text-center" *ngIf="i<10">
+            <tr *ngFor="let englishDictionary of englishDictionaryFiltered | paginate: { itemsPerPage: 5, currentPage: paginaAtual }; let i = index"
+                class="cur-pointer">
+                <td class="text-center">{{englishDictionary.value.title}}</td>
+                <td class="text-center">
                     {{englishDictionary.value.translation}}
                 </td>
-                <td class="text-center" *ngIf="i<10">
+                <td class="text-center">
                     {{englishDictionary.value.phrases ? englishDictionary.value.phrases.length : 0}}
                 </td>
-                <td class="text-center" *ngIf="i<10">
+                <td class="text-center">
                     <button type="button" class="btn btn-primary" (click)="select(englishDictionary)"> Edit</button>
                 </td>
-                <td class="text-center" *ngIf="i<10">
+                <td class="text-center">
                     <button type="button" class="btn btn-success" (click)="openModal(template, englishDictionary)"> Add
                         phrase</button>
                     <button type="button" class="btn btn-success ml-1" (click)="showPhrases(englishDictionary)"> Show
@@ -43,6 +44,10 @@
             </tr>
         </tbody>
     </table>
+    <div class="text-center w-100">
+        <pagination-controls (pageChange)="paginaAtual = $event" previousLabel="Anterior" nextLabel="Próximo">
+        </pagination-controls>
+    </div>
 </section>
 <ng-template #template>
     <div class="modal-header">
