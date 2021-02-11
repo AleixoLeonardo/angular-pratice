@@ -40,7 +40,8 @@ export class EnglishDictonaryListComponent implements OnInit {
 
   search() {
     this.englishDictionaryFiltered = this.englishDictionarys.filter((v => {
-      return v.value.title.toLowerCase().indexOf(this.filter.toLowerCase()) > -1;
+      return v.value.title.toLowerCase().indexOf(this.filter.toLowerCase()) > -1 ||
+        v.value.translate.toLowerCase().indexOf(this.filter.toLocaleLowerCase()) > -1;
     }))
   }
 
