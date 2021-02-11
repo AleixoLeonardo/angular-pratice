@@ -38,10 +38,11 @@ export class DashboardComponent implements OnInit {
   }
 
   getBills() {
+
     this.billdbService.getAll().subscribe((res: any) => {
       res.map(v => {
-        this.totalPredicted += Number(v.value.predicted);
-      })
+        this.totalPredicted += Number(v.value.predicted.trim().replace(".", "").replace(",", "."));
+      });
     }, error => {
     })
   }

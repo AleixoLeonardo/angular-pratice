@@ -1,19 +1,17 @@
 .container{
     display: flex; 
-    flex-flow: row nowrap;
+    flex-flow: column wrap;
+    flex-direction : row;
     justify-content: space-between;
     border: none;
 }
 
 .card{
     align-items: center;
-    width: 50%;
+    width: 100%;
     border: none;
 }
 
-.card-salary{
-    border-right: 1px solid black;
-}
 
 .info{
     font-size: 60px;
@@ -25,4 +23,18 @@
 
 .expense-info {
     color: red;
+}
+
+@media screen and (min-width: 768px) {
+    .container{
+        flex-flow: row nowrap;
+    }
+
+    .card{
+        width: 50%;
+    }
+
+    .card-salary{
+        border-right: 1px solid black;
+    }
 }
