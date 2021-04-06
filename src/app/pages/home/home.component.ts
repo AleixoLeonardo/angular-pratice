@@ -70,5 +70,12 @@ export class HomeComponent implements OnInit {
     this.router.navigate(["dashboard"]);
   }
 
+  goToGoalRegister(){
+    this.router.navigate(["goal", 0]);
+  }
+
+  goToGoalList(){
+    this.router.navigate(["goal-list"]);
+  }
 
 }

@@ -5,13 +5,15 @@ import { TaskDbService } from 'src/app/services/task-db.service';
 import { ToastService } from 'src/app/services/toast.service';
 import { ToastMessage } from 'src/app/constants/toast-message.enum';
 
+declare var gapi: any;
+
 @Component({
   selector: 'app-task',
   templateUrl: './task.component.html',
   styleUrls: ['./task.component.css']
 })
 export class TaskComponent implements OnInit {
-
+  
   daysOfWeek: any = [];
   task: any = null;
   id: string;

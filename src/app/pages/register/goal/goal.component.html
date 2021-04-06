@@ -1,0 +1,23 @@
+<div class="text-center">
+    <button type="button" class="btn btn-primary" (click)="goHome()"> Home</button>
+    <button type="button" class="btn btn-success ml-5" (click)="save()"> Save</button>
+</div>
+<section id="section-form" *ngIf="goal">
+    <div class="form-group">
+        <label for="title" class="font-weight-bold">Title</label>
+        <input type="text" class="form-control" id="title" placeholder="Enter title" [(ngModel)]="goal.title">
+    </div>
+
+    <div class="form-group">
+        <label for="due" class="font-weight-bold">Due</label>
+        <input type="date" class="form-control" id="due" placeholder="Enter due" [(ngModel)]="goal.due">
+    </div>
+
+    <label class="mt-20  d-block font-weight-bold">Completed</label>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="true" id="repeat" [(ngModel)]="goal.completed">
+        <label class="form-check-label" for="completed">
+            Completed
+        </label>
+    </div>
+</section>

@@ -32,6 +32,8 @@ import { EnglishDictonaryListComponent } from './pages/register/english-dictonar
 import { PhrasesComponent } from './pages/operation/phrases/phrases.component';
 import { TimeClockComponent } from './pages/operation/time-clock/time-clock.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { GoalComponent } from './pages/register/goal/goal.component';
+import { GoalListComponent } from './pages/register/goal-list/goal-list.component';
 
 
 @NgModule({
@@ -53,7 +55,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
     EnglishDictonaryComponent,
     EnglishDictonaryListComponent,
     PhrasesComponent,
-    TimeClockComponent
+    TimeClockComponent,
+    GoalComponent,
+    GoalListComponent
   ],
   imports: [
     BrowserModule,

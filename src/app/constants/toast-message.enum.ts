@@ -7,6 +7,8 @@ export enum ToastMessage {
     SALARY_SUCCESS = "Salary saved",
     ENGLISH_DICT_SUCCESS = "English dictionary saved",
     ENGLISH_DICT_HISTORY_SUCCESS = "Phrase added",
+    GOAL_SUCCESS = "Goal saved",
+    
 
     //ERROS
     ERROR = "Something got wrong",

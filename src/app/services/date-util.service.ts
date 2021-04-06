@@ -7,6 +7,61 @@ export class DateUtilService {
 
   constructor() { }
 
+  stringToDate(str) :Date{
+    return new Date(str.split("-")[0], str.split("-")[1], str.split("-")[2]);
+  }
+
+  dateToString(date:Date){
+    return `${date.getFullYear()}-${this.pad(date.getMonth() + 1)}-${this.pad(date.getDate())}`
+  }
+
+  pad(n){
+    if (n < 10){
+      n = "0" + n;
+    }
+    return n;
+  }
+
+  getConfig(){
+    return {
+      firstDayOfWeek: 'su',
+      monthFormat: 'MMM, YYYY',
+      disableKeypress: false,
+      allowMultiSelect: false,
+      closeOnSelect: undefined,
+      closeOnSelectDelay: 100,
+      onOpenDelay: 0,
+      weekDayFormat: 'ddd',
+      appendTo: document.body,
+      drops: 'down',
+      opens: 'right',
+      showNearMonthDays: true,
+      showWeekNumbers: false,
+      enableMonthSelector: true,
+      format: "YYYY-MM-DD HH:mm",
+      yearFormat: 'YYYY',
+      showGoToCurrent: true,
+      dayBtnFormat: 'DD',
+      monthBtnFormat: 'MMM',
+      hours12Format: 'hh',
+      hours24Format: 'HH',
+      meridiemFormat: 'A',
+      minutesFormat: 'mm',
+      minutesInterval: 1,
+      secondsFormat: 'ss',
+      secondsInterval: 1,
+      showSeconds: false,
+      showTwentyFourHours: true,
+      timeSeparator: ':',
+      multipleYearsNavigateBy: 10,
+      showMultipleYearsNavigation: false,
+      locale: 'en',
+      // min:'2017-08-29 15:50',
+      // minTime:'2017-08-29 15:50'
+    };
+  
+  }
+
   diffMinutes(dtIn, DtOut) {
     let diffInMilliSeconds = Math.abs(DtOut - dtIn) / 1000;
     const minutes = Math.floor(diffInMilliSeconds / 60) % 60;

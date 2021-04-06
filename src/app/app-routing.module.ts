@@ -14,6 +14,8 @@ import { EnglishDictonaryComponent } from './pages/register/english-dictonary/en
 import { EnglishDictonaryListComponent } from './pages/register/english-dictonary-list/english-dictonary-list.component';
 import { PhrasesComponent } from './pages/operation/phrases/phrases.component';
 import { TimeClockComponent } from './pages/operation/time-clock/time-clock.component';
+import { GoalComponent } from './pages/register/goal/goal.component';
+import { GoalListComponent } from './pages/register/goal-list/goal-list.component';
 
 
 const routes: Routes = [
@@ -28,7 +30,8 @@ const routes: Routes = [
   { path: 'english-dictionary/:id', component: EnglishDictonaryComponent },
   { path: 'english-dictionary-list', component: EnglishDictonaryListComponent },
   { path: 'time-clock', component: TimeClockComponent },
-
+  { path: 'goal/:id', component: GoalComponent },
+  { path: 'goal-list', component: GoalListComponent },
 
   { path: 'home', component: HomeComponent },
   { path: 'dashboard', component: DashboardComponent },
@@ -39,3 +42,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+

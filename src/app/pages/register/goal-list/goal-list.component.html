@@ -1,0 +1,31 @@
+<div class="text-center">
+    <button type="button" class="btn btn-primary ml-5" (click)="goHome()"> Home</button>
+    <button type="button" class="btn btn-success ml-5" (click)="new()"> Novo</button>
+</div>
+<div class="mt-20">
+    <h4>Goal list</h4>
+</div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col" class="text-center">Title</th>
+            <th scope="col" class="text-center">Due</th>
+            <th scope="col" class="text-center">Edit</th>
+            <th scope="col" class="text-center">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let goal of goals" class="cur-pointer">
+            <td class="text-center">{{goal.value.title}}</td>
+            <td class="text-center">
+                {{goal.value.due | date: 'dd/MM/yyyy' }}
+            </td>
+            <td class="text-center">
+                <button type="button" class="btn btn-primary" (click)="select(goal)"> Edit</button>
+            </td>
+            <td class="text-center">
+                <button type="button" class="btn btn-success" (click)="complete(goal)"> Mark as completed</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

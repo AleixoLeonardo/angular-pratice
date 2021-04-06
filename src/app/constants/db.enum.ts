@@ -6,4 +6,5 @@ export enum DB {
     SALARY = "salary",
     ENGLISH_DICT = "english_dictionary",
     TIME_CLOCK = "time_clock",
+    GOAL = "goal"
 }
